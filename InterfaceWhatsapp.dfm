@@ -1,0 +1,584 @@
+object ufrmWhatsapp: TufrmWhatsapp
+  Left = 0
+  Top = 0
+  Width = 854
+  Height = 719
+  AutoScroll = True
+  AutoSize = True
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Sistema de Mensagens Autom'#225'ticas '
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl_header: TPanel
+    Left = 0
+    Top = 0
+    Width = 838
+    Height = 64
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 23310
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGray
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    object lbl_data: TLabel
+      Left = 432
+      Top = 0
+      Width = 406
+      Height = 64
+      Align = alRight
+      AutoSize = False
+      Caption = '10:00'
+      Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -27
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Layout = tlCenter
+      ExplicitHeight = 65
+    end
+    object lbl_title: TLabel
+      Left = 0
+      Top = 0
+      Width = 432
+      Height = 64
+      Align = alClient
+      Caption = 'Envio Autm'#225'tico de WhatsApp'
+      Color = clCaptionText
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -24
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Layout = tlCenter
+      ExplicitWidth = 324
+      ExplicitHeight = 32
+    end
+  end
+  object pnl_bottom: TPanel
+    Left = 0
+    Top = 640
+    Width = 838
+    Height = 40
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 23310
+    ParentBackground = False
+    TabOrder = 1
+    object lbl_developer: TLabel
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 832
+      Height = 34
+      Align = alClient
+      Alignment = taRightJustify
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      Layout = tlCenter
+      ExplicitLeft = 831
+      ExplicitWidth = 4
+      ExplicitHeight = 17
+    end
+  end
+  object pnl_body: TPanel
+    Left = 0
+    Top = 64
+    Width = 838
+    Height = 576
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 2
+    object lbl_grid: TLabel
+      Left = 24
+      Top = 79
+      Width = 164
+      Height = 21
+      Caption = 'N'#250'meros Selecionados '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Image1: TImage
+      Left = 391
+      Top = 21
+      Width = 50
+      Height = 47
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
+        003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000002
+        964944415478DA636418E28071A01D30EA017C92134EFDFC4F4FC71498B1931C
+        A0A31E18F5C0A807463D30EA81510F90E481CE3537C17479883A0A9F5400D33F
+        EA01523D404B30EA01623C30E493D090F7002DC1A80788F1C0904F4243DE03B4
+        04A31E20C603E426211E0E66062B2D11063D057E066626ECD60E5A0FA8CBF032
+        781A4B30B0B33231FCFBF79BE1D9E7A30CCF3F1F67F8F4E33EC39F3F5FC06A58
+        587818BEFD7AB19681E1FF7AB64FCC6BB6E76DFF49130F50029E7F3ACA70EDE5
+        7C866FBF5F11527A1FE8B0D23D093BD70E0A0FFC67F8C770F5C51C86FBEFB690
+        A40FE8B809825C7C25ABC356FF1D500F5C7E3183E1C1BB6DE47A7FD2DE845DF9
+        03E681179F4F309C7EDC86556E4FFC0E14BECB420FAC3E0002FF7D89BB36D3DD
+        037FFFFF623870270B679A27D20320709FED139326B68C4D530F3CFD7888E1DC
+        D31E9CF2247800180D8C61FB1277ACA6AB07CE3EE96678F6E930753CC0C8B06C
+        5FFCCE68BA7A60DF9D7486AFBF9EE374302180E22146869B7BE3776A10E501A7
+        A55F7F0129564A1C0F36FC3728C0BE53C7030C0C9FF726ECE423D6036F819410
+        E51E8802923FE8EF01C7A55FEF01251429F6C09F1C60E27D46150F00D3F28D7D
+        093B3589F200300640B58E27E51EE803DA7C04A73CCD32B1D3926FED0C8CFF2B
+        28F500C3BFC30C8C7FFBA9E301528A51A7A5DFCC805A4E52EC01863FC0582840
+        4946647AE0AA10179F3EB63611CE62D469E9978340693B8AFDF0EF2430163A29
+        F100794D09A7A5DFE581B6839AB3C6147BE2EF1206C67FEBC8D20A74602BB059
+        5D83479EF620745528F3BB6F1F81399A318F44C753D69CA636705EE816022C4E
+        BA814C05024AA9D3A1A105F09CE4C9FE8BF76F20032323A89836016225A8D43D
+        A0E74E3330FDDBCEF691790355BA9443018C7A60A0010067C6A34050CE8E8800
+        00000049454E44AE426082}
+      Stretch = True
+      OnClick = Image1Click
+    end
+    object Image2: TImage
+      Left = 764
+      Top = 496
+      Width = 49
+      Height = 46
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
+        003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000004
+        194944415478DAED98EF4F5B5518C7BFF75EEE4A0B1DEB18AB222B8396525A1C
+        2E434563D4C4ECCD8CB26AB2372E663AB7F76A342131F195465FED1F307BB317
+        7B630CC697D3648B89B0AC8BC0DA720B2D3F06825DD7D10D687BFBEB7ACE5DEA
+        4069774B6F7B4BD26F727BEE49CFBDE7FB39799EF39C96C11E17A3B5813A80D6
+        06EA005A1BA80880C717B2B00DD22546C2EBA47BA8CA9EEE43C2EFB91CBE3CE1
+        B2054B06B83CFADBAB46037FCD66693754D9F83685EEAEC49319F1ADB3A74E8E
+        970470E9CA8F4BE168ACA3C3DC86C17E3B743C5F55E3623A0D8F3780E5F07D98
+        0F9A963EFDF07D4B4900BFDC188FDFF20AFA543A0343A30E43034EB4995AAA62
+        FEDE83186E4E4D239E14A1DBC763D0D51B7FE78DA1A69200FE148292984AE3E6
+        1D01AB91A83CC0D6D98181DE6E702C5B11E35912F093813904179749F803ED87
+        5BF152BF438638EEB015DD687604A02DFD98252F9C0C8490CB4968696EC22B2F
+        38E5564D3DDCD8C4D8845F6E5996210B65450F59B0BCB15D03E4B5F6685D9E60
+        3D9E00C7B13866EF869D4CA08666C8024DCDCC219BCDC168D0CB0B64DA6FDC36
+        A66C00AA74268BDBFE192CAE84E57EB909FE38516748A246E4BEB5A31D030E2B
+        F806EE7F635501C86BE9EF086EF90248D304D793047F9E24F8C1D2123CF2E021
+        C6EFF8114F88E0F906BCE8EAC59167DA0A8E5715806A3391C4D8A41FD1D82330
+        0C0347D711F4F77481658A17F59C24C13B3B0F617E0912B93F74A085EC707D68
+        D237167D4E75002A6AC0175A849F5CF4BEF5801143C75C6836EC6C6683E4CFF8
+        14855E97A19DD64EB8C8C5304F3FC9540420AF7BD1358C4D09488A221A48FC0E
+        BAECE87CD6BC6D0CCD1B0FC99F0CC923BD6E1F01EDC3E15693D2292A0B40B5B5
+        665075B69B65102A8FEF49E26FDDDB4B51C501A868184DCF2DC21B7C1C52F95A
+        41F7761A262EDB5138BB2D8A42461380BCB6D60CAA427B7BCD0250E56B06D509
+        A77DC7BDBD90FEBA12C67367CDDB5C551DA01CDD1EF6C234B41F5D9F91A3848E
+        DD9B0054C6FE2658472CE09AB9BD0940D568D1A1E7EBA378F9B5BEBD0940C59B
+        7888D1D4F18BB3EE094D01A48C84E8AF6B885C5B436A3585CC66B694C7631223
+        B92F08EEEB4A01D649D3AC96F9743483E0370B888792E5BC264520CE1188AB4A
+        00464933AC867929450ADC17212416CA32FFEFEBC835F249E0F4F745013C8179
+        072765FF20B7CA0F2C0514FE398AE5CBAB6A9897014821FFEABC70FADBA20032
+        C493FF854E92EEAECBE8F4E721C4830935CC2789FB0F2E08C33FFDF78B8AFE33
+        F743EFE80669CAFD115D5A12AB0CB0E38EC632B9373F16DEBBA160FCDD1CC79E
+        BAE87FD757680E4D004822320AC64F3060DE3E1F185E293647AD025CE744C9FD
+        D1823BF6B4396A0E809198AB465E3C77C67726A5648E5A03F88E84CC08091DC5
+        A7819A02D88DEA0075805A06A886EA005AAB0EA0B5EA005AEB1F50CFF9404B4A
+        CD420000000049454E44AE426082}
+    end
+    object Image3: TImage
+      Left = 692
+      Top = 496
+      Width = 49
+      Height = 46
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
+        003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000005
+        8B4944415478DAED590B6C5445143DF3B68052D014F04383349682A6A8A99558
+        4344D18A8946940844D14443884D94EEAF8A44345AFF4AB4ED56848886108C84
+        A41A821A493448049A8204A3D1AA415B9BA251835A08B6A5B5FBC633AFEDEEEC
+        76B79DDD3E7725E96C6667DE7D3377CE99BD33F7CEACC0199E44B6018C11C836
+        8031026E29923E5CC5A29C1ACB581631CFD0F4F741E22778F09CA8C507FF1B02
+        F2214CC2383CC06A05F3A5065D168B103ECC3A01598D1C9C402567F5093E4E4D
+        A16B0109B46795800C622E6C6C67F58A14BB9E40085338A08CE80A585F428A53
+        ACB5F2B185705A21C3AD44D542A2BFBB4E40FAB194C5DBCC6727781D66DECFFC
+        3E211E82459BEFC169E7CD784CA6EC3C518F23B1FAC4C784B028C9709DCC2443
+        72B650E40E88FAF0CEB40910FC7D2CB6307BE25E7531D77199D688D7F1674A13
+        12B05E26B1470D9AB6C063DF206A702C2D023280251CA881D59CB8570D34A72A
+        F11A7E4E057874523CF7F0FB9D74C11B1120F812826F62F52C4DFC0F65953489
+        CDE9008FE876D693F5CD304DDA09FEDA64E04724E0EC361D38CC6A89260E13FC
+        5282DF351AF051FDD6A9B8C9D192DD8C3C948A6AF4A647C0073F5BD4C50A1120
+        F8D068C147D4F93D9C20392F01F8C1CAE3DC915E4899807C04B934943656A769
+        E26D5476BF5BE0FB09586FB158A5213A09699FAB35E9208E996223FE4E8D4000
+        01CE76AD26EA64EBD9A20EBFBA4AC06779A9B77EE0F15B087B19C76D643D4F6B
+        B69A13B7D1988054721FBEE7F71C4DFC0C953CE5267867AC20167021EF63B599
+        6653AE1C18B7ECE7F9BC4E037494667B893901BFE365BFD244619AE4746E97C7
+        5D27E0C539B0AC0304BF68D0FB32C6BA9031561BAB1334127348E20753026B58
+        ACD7447BA9FC46B7C147C67B18D3C4ABF8230EC3472C6ED1445E62D86046C047
+        0725B04C1355B1732D3298864CA2C4BBFC05969B11F0433997B911818532C6F1
+        9F6794800FF389AE51131DE6245E6D4A40C5345322821C0662713FF17F4E6035
+        0A386E9B263A4602334D09F440C59083A91BE3C566EEC699245081898C793B35
+        D169121812052723A03A4ED408E492405746090409D68E19B38B04724D09A803
+        C6C5114118856203E3FB4C12A8443E03F75F34D16F2430DD94C04116655AABF9
+        F4C04D192510C042EE3C7B35D12112B8C694C00E1677450558C32DEC958C12F0
+        E349164F6BA2AD24B0D29480BA69D063FD3DEC7C534C9B04CEC765025FB0B852
+        43BA9256B0D58C4010855C402D9A48ED4A051157EFC52CBAFF4FD16B97884D8C
+        16DD06EFC50CFA9E760D9FCD4F41A2935FF268D48FA32C664705789166B46E00
+        BCB2CD8B60DB0BA9F433D70904F006C7ABD044432CC084C05A162F69A293742C
+        E5E8B3763AE0FB935F84EC7AB898641523E0B013098CD3266F05276F476A0482
+        F4C4B6B39D6A870BAB1BFA958AC416516FAF824B492EE7C6998FDDAC46AF5A18
+        4AF304522C1A9C6B1B73024E5FBF73F3F6EC00F844DD8F8850781E5C4A1C2FF6
+        74D69F6EA6F97C92ACCFC887FABF782E10567192263DE8B627BB1166243C7F0B
+        ECE2CEB364B87EC313F0A2980B569D9692DF7F5AF6658C549BD306DE6F3635AC
+        FAE25EB5A30FA5235D960DB706D49DCD1E562F181E82B89766B43D2DF0415CCE
+        75A6663DFEB0D4418BBD9E13F3F5483A92F90143F08E86F5A2CE5E9B1270F55F
+        824015AB7763E8E23A4EC96DA6E78FC404029E3B21E502D68AD844FD59A102BB
+        098955C8DD22246F8DEDCF1995F4D2D6C05548D8896CD53ABA8E23DE8EE8361C
+        9FBE63BF3B129D7D53229010E683C8E3CE5C08E129E4134BE5AD5529A6D21794
+        46DA551376077D063029951F85FAB6A11795C9EE7F464DC018491045B46BE319
+        646A24E5C76832FBD319CF7D0201D0FCF0DE08CD9443546DDEE41EBF6F34E3B9
+        4FC04F3B075630E7339F8FFE2B7915F0A940EC478E7890B98933DEEDC678637F
+        B3663B8D11C8763AE309FC0B7EA4C44037B043E00000000049454E44AE426082}
+    end
+    object GroupBox1: TGroupBox
+      Left = 24
+      Top = 16
+      Width = 361
+      Height = 52
+      Caption = 'Caminho do Arquivo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object edt_path: TEdit
+      Left = 32
+      Top = 35
+      Width = 345
+      Height = 21
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object StringGrid1: TStringGrid
+      Left = 24
+      Top = 104
+      Width = 337
+      Height = 257
+      ColCount = 2
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      RowHeights = (
+        24
+        24
+        24
+        24
+        24)
+    end
+    object grp_mensagem: TGroupBox
+      Left = 401
+      Top = 98
+      Width = 424
+      Height = 359
+      Caption = 'Mensagem'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Padding.Left = 10
+      Padding.Top = 10
+      Padding.Right = 10
+      Padding.Bottom = 10
+      ParentFont = False
+      TabOrder = 3
+      object memo: TMemo
+        Left = 12
+        Top = 25
+        Width = 400
+        Height = 322
+        Align = alClient
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        Lines.Strings = (
+          'Memo1')
+        ScrollBars = ssVertical
+        TabOrder = 0
+      end
+    end
+    object Panel1: TPanel
+      Left = 0
+      Top = 0
+      Width = 838
+      Height = 576
+      Align = alClient
+      BevelOuter = bvNone
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 4
+      object lbl_numeros: TLabel
+        Left = 24
+        Top = 79
+        Width = 164
+        Height = 21
+        Caption = 'N'#250'meros Selecionados '
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object img_file: TImage
+        Left = 391
+        Top = 21
+        Width = 50
+        Height = 47
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
+          003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000002
+          964944415478DA636418E28071A01D30EA017C92134EFDFC4F4FC71498B1931C
+          A0A31E18F5C0A807463D30EA81510F90E481CE3537C17479883A0A9F5400D33F
+          EA01523D404B30EA01623C30E493D090F7002DC1A80788F1C0904F4243DE03B4
+          04A31E20C603E426211E0E66062B2D11063D057E066626ECD60E5A0FA8CBF032
+          781A4B30B0B33231FCFBF79BE1D9E7A30CCF3F1F67F8F4E33EC39F3F5FC06A58
+          587818BEFD7AB19681E1FF7AB64FCC6BB6E76DFF49130F50029E7F3ACA70EDE5
+          7C866FBF5F11527A1FE8B0D23D093BD70E0A0FFC67F8C770F5C51C86FBEFB690
+          A40FE8B809825C7C25ABC356FF1D500F5C7E3183E1C1BB6DE47A7FD2DE845DF9
+          03E681179F4F309C7EDC86556E4FFC0E14BECB420FAC3E0002FF7D89BB36D3DD
+          037FFFFF623870270B679A27D20320709FED139326B68C4D530F3CFD7888E1DC
+          D31E9CF2247800180D8C61FB1277ACA6AB07CE3EE96678F6E930753CC0C8B06C
+          5FFCCE68BA7A60DF9D7486AFBF9EE374302180E22146869B7BE3776A10E501A7
+          A55F7F0129564A1C0F36FC3728C0BE53C7030C0C9FF726ECE423D6036F819410
+          E51E8802923FE8EF01C7A55FEF01251429F6C09F1C60E27D46150F00D3F28D7D
+          093B3589F200300640B58E27E51EE803DA7C04A73CCD32B1D3926FED0C8CFF2B
+          28F500C3BFC30C8C7FFBA9E301528A51A7A5DFCC805A4E52EC01863FC0582840
+          4946647AE0AA10179F3EB63611CE62D469E9978340693B8AFDF0EF2430163A29
+          F100794D09A7A5DFE581B6839AB3C6147BE2EF1206C67FEBC8D20A74602BB059
+          5D83479EF620745528F3BB6F1F81399A318F44C753D69CA636705EE816022C4E
+          BA814C05024AA9D3A1A105F09CE4C9FE8BF76F20032323A89836016225A8D43D
+          A0E74E3330FDDBCEF691790355BA9443018C7A60A0010067C6A34050CE8E8800
+          00000049454E44AE426082}
+        Stretch = True
+        OnClick = Image1Click
+      end
+      object grp_path: TGroupBox
+        Left = 24
+        Top = 16
+        Width = 361
+        Height = 52
+        Caption = 'Caminho do Arquivo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        object edit_path: TEdit
+          Left = 9
+          Top = 20
+          Width = 345
+          Height = 21
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+      end
+      object lista_grid: TStringGrid
+        Left = 24
+        Top = 106
+        Width = 441
+        Height = 281
+        Color = clBtnFace
+        ColCount = 3
+        Ctl3D = True
+        FixedColor = clWhite
+        FixedCols = 0
+        RowCount = 50
+        FixedRows = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Options = [goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColMoving, goEditing, goAlwaysShowEditor]
+        ParentCtl3D = False
+        ParentFont = False
+        TabOrder = 1
+        RowHeights = (
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24)
+      end
+      object grp_msg: TGroupBox
+        Left = 488
+        Top = 98
+        Width = 337
+        Height = 239
+        Caption = 'Mensagem'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Padding.Left = 10
+        Padding.Top = 10
+        Padding.Right = 10
+        Padding.Bottom = 10
+        ParentFont = False
+        TabOrder = 2
+        object memo_mensagem: TMemo
+          Left = 12
+          Top = 25
+          Width = 313
+          Height = 202
+          Align = alClient
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Lines.Strings = (
+            'Memo1')
+          ScrollBars = ssVertical
+          TabOrder = 0
+        end
+      end
+      object btn_enviar: TButton
+        Left = 650
+        Top = 343
+        Width = 175
+        Height = 42
+        Caption = 'Enviar Mensagens'
+        Style = bsCommandLink
+        TabOrder = 3
+        OnClick = btn_enviarClick
+      end
+      object grp_logs: TGroupBox
+        Left = 24
+        Top = 408
+        Width = 801
+        Height = 154
+        Caption = 'Logs'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Padding.Left = 10
+        Padding.Top = 10
+        Padding.Right = 10
+        Padding.Bottom = 10
+        ParentFont = False
+        TabOrder = 4
+        object memo_logs: TMemo
+          Left = 12
+          Top = 25
+          Width = 777
+          Height = 117
+          Align = alClient
+          BevelInner = bvNone
+          Lines.Strings = (
+            'Memo1')
+          ParentShowHint = False
+          ReadOnly = True
+          ScrollBars = ssVertical
+          ShowHint = False
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Excel Files|.xls;*.xlsx;*.xlsm'
+    Left = 480
+    Top = 89
+  end
+  object Timer1: TTimer
+    Interval = 1
+    OnTimer = Timer1Timer
+    Left = 568
+    Top = 97
+  end
+end
