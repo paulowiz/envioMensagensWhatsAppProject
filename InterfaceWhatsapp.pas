@@ -277,7 +277,7 @@ begin
            lista_grid.Cells[2,nLinha]:= msg;
          end else
          begin
-           Writeln(arq,'55'+lista_grid.Cells[0,nLinha]+';'+lista_grid.Cells[1,nLinha]);
+           Writeln(arq,lista_grid.Cells[0,nLinha]+';'+'55'+lista_grid.Cells[1,nLinha]);
            lista_grid.Cells[2,nLinha]:= 'OK';
          end;
      end;
