@@ -162,6 +162,8 @@ end;
 
 procedure TufrmWhatsapp.btn_enviarClick(Sender: TObject);
 begin
+
+
   if edit_path.Text = EmptyStr then
   begin
     ShowMessage('Nenhuma arquivo foi importado!');
@@ -189,21 +191,16 @@ begin
 
   WinExec('main.exe',SW_HIDE); // roda escondido
 
-  if SW_HIDE = 0 then
-  begin
-    ShowMessage('Serviço do whatsapp não localizado, favor verificar a versão do seu software');
-  end else
-  begin
-     codigo := codigo+1;
-     memo_logs.Lines.Add('');
-     memo_logs.Lines.Add('Codigo do Envio: '+IntToStr(codigo));
-     memo_logs.Lines.Add('Status: Mensagens enviadas com sucesso!');
-     memo_logs.Lines.Add('Data/Hora: '+DateTimeToStr(Now));
-     memo_logs.Lines.Add('Arquivo: '+OpenDialog1.FileName);
-     memo_logs.Lines.Add('Mensagem:');
-     memo_logs.Lines.Add('['+memo_mensagem.Text+']');
-     memo_logs.Lines.Add('');
-  end;
+  codigo := codigo+1;
+  memo_logs.Lines.Add('');
+  memo_logs.Lines.Add('Codigo do Envio: '+IntToStr(codigo));
+  memo_logs.Lines.Add('Status: Números formatados e prontos para envio de mensagens.Esperando execução automática do Whatsapp Web.......');
+  memo_logs.Lines.Add('Data/Hora: '+DateTimeToStr(Now));
+  memo_logs.Lines.Add('Arquivo: '+OpenDialog1.FileName);
+  memo_logs.Lines.Add('Mensagem:');
+  memo_logs.Lines.Add('['+memo_mensagem.Text+']');
+  memo_logs.Lines.Add('');
+
 
 
 end;
