@@ -74,9 +74,9 @@ object ufrmWhatsapp: TufrmWhatsapp
   end
   object pnl_bottom: TPanel
     Left = 0
-    Top = 640
+    Top = 632
     Width = 838
-    Height = 40
+    Height = 48
     Align = alBottom
     BevelOuter = bvNone
     Color = 23310
@@ -86,8 +86,8 @@ object ufrmWhatsapp: TufrmWhatsapp
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 832
-      Height = 34
+      Width = 781
+      Height = 42
       Align = alClient
       Alignment = taRightJustify
       Font.Charset = DEFAULT_CHARSET
@@ -97,16 +97,50 @@ object ufrmWhatsapp: TufrmWhatsapp
       Font.Style = []
       ParentFont = False
       Layout = tlCenter
-      ExplicitLeft = 831
+      ExplicitLeft = 780
       ExplicitWidth = 4
       ExplicitHeight = 17
+    end
+    object img_linkedin: TImage
+      Left = 787
+      Top = 0
+      Width = 51
+      Height = 48
+      Align = alRight
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
+        003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000002
+        644944415478DA636418E28071A01D30EA818176C0A80706DA0134F70073FBC5
+        602095FF9F914107480BD2C95DEF810EBBCCC0F87FE2DF728375647B80A9E362
+        3F902AA093A371819E7F15FAA5247B0014F2C0505F33C08E8738929131F06FB9
+        DE06523D7008E801DB81763C08FC67603CF0BF42CF91240F0093CF1720C53DD0
+        8E8782CFC064C447AA07FE0FB4AB9101D00358DD4AB2073484D919E678CA82E9
+        1B6F7F32246F7BCC70F3DDCFA1E38143D1CA0CD632889475F0F15706A7657787
+        8E073E15E93070B332C1F95F7EFD63E0EFBF32743C801E03878031E038946240
+        45908D6189AF1C83813827C399E7DF19E2B63C62B8F7E1D7D0F1C04081510FC0
+        00B04AC71063EEBC44505E8A8795A1C2528CC1518E9B419C9B95810968F3B537
+        3F18565EFFC030F7D23B861F7FF087D7807A406FEE2D865D114A0C12DC2C58ED
+        3AFBE23B83CFEAFB0CAFBEFD199C1EB8FDFE2783AA203B033EB0FFE11706D715
+        F71870C5C3807A8058E0B7E601C3D6BB9F069F07FE014D9A74E60DC3EE079F19
+        C4B8581892F485186C6530DB894BAEBE6788DFF278F079A0E6D00B86F6E3AF10
+        EA191919B6862A30B82AF2A2A8BB056C5369CEBE39F83C203CE12AC3879F7F51
+        C46C8031701058AB23838F40354240B583CA03A0E4C3DA7509438F003B33C3DB
+        026D143190852C9D986A07D403E8F2A49835EA81510F8C7A60D403A31E18F500
+        D53D3050801C0F0CEDA1C5213FB8CBDC71D1179886360DB4E3C18EFCC7E8FDB7
+        4A6F1B491E0001A68E4B8D40FFD70DACF3FFD7FFAB3068C2E93942DA91A6984C
+        8134079D5CFD03E8B0530CFFFF4FF85B69B01E9FC2E13FC937D8C1A807061A8C
+        7A60A00100537E93406EA04CC90000000049454E44AE426082}
+      OnClick = img_linkedinClick
+      OnMouseMove = img_linkedinMouseMove
+      ExplicitTop = 16
+      ExplicitHeight = 32
     end
   end
   object pnl_body: TPanel
     Left = 0
     Top = 64
     Width = 838
-    Height = 576
+    Height = 568
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
@@ -339,7 +373,7 @@ object ufrmWhatsapp: TufrmWhatsapp
       Left = 0
       Top = 0
       Width = 838
-      Height = 576
+      Height = 568
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
@@ -390,6 +424,14 @@ object ufrmWhatsapp: TufrmWhatsapp
           00000049454E44AE426082}
         Stretch = True
         OnClick = Image1Click
+        OnMouseMove = img_fileMouseMove
+      end
+      object lbl_aviso: TLabel
+        Left = 523
+        Top = 6
+        Width = 302
+        Height = 13
+        Caption = 'Vers'#227'o Beta Detectada! Seu software vai vencer em  999 dias.'
       end
       object grp_path: TGroupBox
         Left = 24
@@ -534,6 +576,7 @@ object ufrmWhatsapp: TufrmWhatsapp
         Style = bsCommandLink
         TabOrder = 3
         OnClick = btn_enviarClick
+        OnMouseMove = btn_enviarMouseMove
       end
       object grp_logs: TGroupBox
         Left = 24

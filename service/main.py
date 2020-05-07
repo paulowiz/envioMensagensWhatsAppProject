@@ -19,14 +19,14 @@ moblie_no_list=[]
 for reg in contato_txt:
     array = reg.split(';')
     name.append(array[0])
-    moblie_no_list.append('55'+array[1])
+    moblie_no_list.append(array[1])
 
 print(name)
 print(moblie_no_list)
 
 
 def element_presence(by, xpath, time):
-    element_present = EC.presence_of_element_located((By.XPATH, xpath))
+    element_present = EC.presence_of_elemeant_located((By.XPATH, xpath))
     WebDriverWait(driver, time).until(element_present)
 
 

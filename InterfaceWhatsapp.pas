@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
   Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.Grids,ComObj, Vcl.CategoryButtons,
-  System.ImageList, Vcl.ImgList;
+  System.ImageList, Vcl.ImgList,ShellApi,DateUtils;
 
 type
   TufrmWhatsapp = class(TForm)
@@ -33,14 +33,25 @@ type
     memo_logs: TMemo;
     lbl_developer: TLabel;
     edit_path: TEdit;
+    img_linkedin: TImage;
+    lbl_aviso: TLabel;
     procedure Image1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure btn_enviarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure geraTxt;
+    procedure img_linkedinClick(Sender: TObject);
+    procedure img_linkedinMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure btn_enviarMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure img_fileMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
   private
     { Private declarations }
     codigo :Integer;
+    diasAVencer  : Integer;
+    diaVencimento :TdateTime;
     function EhNumero(S: string): Boolean;
     function RemoveCaracter(str: string):string;
     Function XlsToStringGrid(xStringGrid: TStringGrid; xFileXLS: string): Boolean;
@@ -75,6 +86,12 @@ for x:=1 to length(str) do
     st:=st + str[x];
     end;
 Result:=st;
+end;
+
+procedure TufrmWhatsapp.btn_enviarMouseMove(Sender: TObject; Shift: TShiftState;
+  X, Y: Integer);
+begin
+    btn_enviar.Cursor := crHandPoint;
 end;
 
 function TufrmWhatsapp.EhNumero(S: string): Boolean;
@@ -145,9 +162,6 @@ end;
 
 procedure TufrmWhatsapp.btn_enviarClick(Sender: TObject);
 begin
-try
-
-
   if edit_path.Text = EmptyStr then
   begin
     ShowMessage('Nenhuma arquivo foi importado!');
@@ -173,34 +187,42 @@ try
    Free;
   end;
 
-   //WinExec('main.exe',SW_HIDE); // roda escondido
+  WinExec('main.exe',SW_HIDE); // roda escondido
 
-   codigo := codigo+1;
-   memo_logs.Lines.Add('');
-   memo_logs.Lines.Add('Codigo do Envio: '+IntToStr(codigo));
-   memo_logs.Lines.Add('Status: Mensagens enviadas com sucesso!');
-   memo_logs.Lines.Add('Data/Hora: '+DateTimeToStr(Now));
-   memo_logs.Lines.Add('Arquivo: '+OpenDialog1.FileName);
-   memo_logs.Lines.Add('Mensagem:');
-   memo_logs.Lines.Add('['+memo_mensagem.Text+']');
-   memo_logs.Lines.Add('');
-
-finally
-
-
-   end;
+  if SW_HIDE = 0 then
+  begin
+    ShowMessage('Serviço do whatsapp não localizado, favor verificar a versão do seu software');
+  end else
+  begin
+     codigo := codigo+1;
+     memo_logs.Lines.Add('');
+     memo_logs.Lines.Add('Codigo do Envio: '+IntToStr(codigo));
+     memo_logs.Lines.Add('Status: Mensagens enviadas com sucesso!');
+     memo_logs.Lines.Add('Data/Hora: '+DateTimeToStr(Now));
+     memo_logs.Lines.Add('Arquivo: '+OpenDialog1.FileName);
+     memo_logs.Lines.Add('Mensagem:');
+     memo_logs.Lines.Add('['+memo_mensagem.Text+']');
+     memo_logs.Lines.Add('');
+  end;
 
 
 end;
 
 procedure TufrmWhatsapp.FormShow(Sender: TObject);
 begin
+    diaVencimento := StrToDateTime('05/12/2020');
     memo_logs.Text := EmptyStr;
     memo_mensagem.Text := EmptyStr;
     lbl_developer.Caption := ' Desenvolvido por Paulo Mota ';
     lbl_title.Caption :=  ' Envio Autmático de WhatsApp ';
     lista_grid.DefaultColWidth:=100;
     lista_grid.ColWidths[2]:=200;
+    diasAVencer := DaysBetween(Now, diaVencimento); //datauntil
+    if (diasAVencer = 0) then
+    begin
+     ShowMessage('Seu software está vencido, favor procurar o administrador infromado');
+     Close;
+    end;
 end;
 
 procedure TufrmWhatsapp.geraTxt;
@@ -258,7 +280,7 @@ begin
            lista_grid.Cells[2,nLinha]:= msg;
          end else
          begin
-           Writeln(arq,lista_grid.Cells[0,nLinha]+';'+lista_grid.Cells[1,nLinha]);
+           Writeln(arq,'55'+lista_grid.Cells[0,nLinha]+';'+lista_grid.Cells[1,nLinha]);
            lista_grid.Cells[2,nLinha]:= 'OK';
          end;
      end;
@@ -292,9 +314,33 @@ end;
 
 
 
+procedure TufrmWhatsapp.img_fileMouseMove(Sender: TObject; Shift: TShiftState;
+  X, Y: Integer);
+begin
+   img_file.Cursor := crHandPoint;
+end;
+
+procedure TufrmWhatsapp.img_linkedinClick(Sender: TObject);
+var
+buffer: String;
+begin
+        buffer := 'https://www.linkedin.com/in/paulo-mota-955218a2/' ;
+
+       ShellExecute(Application.Handle, nil, PChar(buffer), nil, nil, SW_SHOWNORMAL);
+       //shellapi
+end;
+
+procedure TufrmWhatsapp.img_linkedinMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+     img_linkedin.Cursor := crHandPoint;
+end;
+
 procedure TufrmWhatsapp.Timer1Timer(Sender: TObject);
 begin
-   lbl_data.Caption := DateTimeToStr(Now);
+  lbl_data.Caption := DateTimeToStr(Now);
+  diasAVencer:= DaysBetween(Now, diaVencimento); //datauntil
+  lbl_aviso.Caption:= ' Versão Beta Detectada! Seu software vai vencer em '+IntToStr(diasAVencer)+' dias';
 end;
 
 end.
