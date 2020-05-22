@@ -9,7 +9,7 @@ Requisitos:
 Google Chrome <br>
 Microsoft Excel ou Similar<br>
 
-Baixar o arquivo Software Compilado.rar e executar o SistemaDeEnvio.exe, preencher a planilha_padrão.xls com os nomes e números desejados , usar o SistemaDeEnvio aberto para importar o xls, digite a mensagem 
+Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppProject/blob/master/Software%20Compilado.rar"><b>Software Compilado.rar</b></a> e executar o <b>SistemaDeEnvio.exe</b>, preencher a <b>planilha_padrão.xls</b> com os nomes e números desejados , usar o <b>SistemaDeEnvio</b> aberto para importar o xls, digite a mensagem 
 
 ![gif](https://user-images.githubusercontent.com/18649504/82680684-059a2d00-9c23-11ea-980f-055d88dc8bc2.gif)
 
