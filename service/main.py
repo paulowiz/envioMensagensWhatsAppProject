@@ -8,8 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 import socket
 
 mensagem = open('mensagem.txt','r')
-for m in mensagem:
-    message_text = m
+for msg in mensagem:
+    message_text = msg
     
 no_of_message = 1  # no. of time
 contato_txt = open('contatos.txt','r') #[553183001068]  # list of phone number
@@ -21,12 +21,9 @@ for reg in contato_txt:
     name.append(array[0])
     moblie_no_list.append(array[1])
 
-print(name)
-print(moblie_no_list)
-
 
 def element_presence(by, xpath, time):
-    element_present = EC.presence_of_elemeant_located((By.XPATH, xpath))
+    element_present = EC.presence_of_element_located((By.XPATH, xpath))
     WebDriverWait(driver, time).until(element_present)
 
 
@@ -46,7 +43,7 @@ driver = webdriver.Chrome(chrome_driver_binary, chrome_options=options)
  
 #driver = webdriver.Chrome(executable_path="chromedriver.exe")
 driver.get("http://web.whatsapp.com")
-sleep(1)  # wait time to scan the code in second
+sleep(10)  # wait time to scan the code in second
 
 
 def send_whatsapp_msg(phone_no, text):
@@ -59,7 +56,7 @@ def send_whatsapp_msg(phone_no, text):
 
     try:
         element_presence(
-            By.XPATH, '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]',30)
+            By.XPATH, '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]', 30)
         txt_box = driver.find_element(
             By.XPATH, '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
         global no_of_message
@@ -70,10 +67,10 @@ def send_whatsapp_msg(phone_no, text):
     except Exception as e:
         print("invailid phone no :"+str(phone_no))
 
+
 for moblie_no in moblie_no_list:
     try:
         send_whatsapp_msg(moblie_no, message_text)
-        sleep(15)
 
     except Exception as e:
         sleep(10)
