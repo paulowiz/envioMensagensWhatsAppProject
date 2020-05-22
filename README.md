@@ -22,6 +22,9 @@ Baixar o arquivo Software Compilado.rar e executar o SistemaDeEnvio.exe, preench
 ## 📌 Estrutura do Projeto 
     |-- dprInterfaceWhatsap.dproj ( Projeto de Interface do software e lógicas)
     |-- Service/main.py ( Serviço feito em python que chama whatsapp web)
+    
+   <br>
+   <p>O sistema feito em delphi recebe a planilha padrão, valida os números e gera os txts contato.txt e mensage.txt,acionando o serviço em python para ler os txts,encaminhando as mensagens.</p>
 
 
 
