@@ -426,13 +426,6 @@ object ufrmWhatsapp: TufrmWhatsapp
         OnClick = Image1Click
         OnMouseMove = img_fileMouseMove
       end
-      object lbl_aviso: TLabel
-        Left = 523
-        Top = 6
-        Width = 302
-        Height = 13
-        Caption = 'Vers'#227'o Beta Detectada! Seu software vai vencer em  999 dias.'
-      end
       object grp_path: TGroupBox
         Left = 24
         Top = 16
