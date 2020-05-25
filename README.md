@@ -6,7 +6,7 @@ O software tem o objetivo de enviar uma mensagem padrão para uma lista de conta
 
 Requisitos:
 
-Google Chrome <br>
+Google Chrome v83 <br> (Caso queria usar as verões 80 ou 81, deve renomear o arquivo chromedriver para chromedriver83 e retirar o codigo da versão do chromedriver desejado para ficar com o nome de chromedriver)
 Microsoft Excel ou Similar<br>
 
 Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppProject/blob/master/Software%20Compilado.rar"><b>Software Compilado.rar</b></a> e executar o <b>SistemaDeEnvio.exe</b>, preencher a <b>planilha_padrão.xls</b> com os nomes e números desejados , usar o <b>SistemaDeEnvio</b> aberto para importar o xls, digite a mensagem 
