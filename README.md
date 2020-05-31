@@ -9,9 +9,9 @@ Requisitos:
 Google Chrome v83 <br> (Caso queria usar as verões 80 ou 81, deve renomear o arquivo chromedriver para chromedriver83 e retirar o codigo da versão do chromedriver desejado para ficar com o nome de chromedriver)
 Microsoft Excel ou Similar<br>
 
-Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppProject/blob/master/Software%20Compilado.rar"><b>Software Compilado.rar</b></a> e executar o <b>SistemaDeEnvio.exe</b>, preencher a <b>planilha_padrão.xls</b> com os nomes e números desejados , usar o <b>SistemaDeEnvio</b> aberto para importar o xls, digite a mensagem 
+Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppProject/blob/feature/countryCode/Software.rar"><b>Software.rar</b></a> e executar o <b>WhatsAppSender.exe</b>, preencher a <b>planilha_padrão(Default Sheet).xls</b> com os nomes e números desejados , usar o <b>WhatsAppSender</b> aberto para importar o xls, digite a mensagem 
 
-![gif](https://user-images.githubusercontent.com/18649504/82680684-059a2d00-9c23-11ea-980f-055d88dc8bc2.gif)
+![WhatsAppSender](https://user-images.githubusercontent.com/18649504/83356376-2ad21e00-a33c-11ea-9bf8-b385c6c43861.gif)
 
 ## 🚀 Tecnologias Usadas 
 
@@ -25,8 +25,9 @@ Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppPro
     
    <br>
    <p>O sistema feito em delphi recebe a planilha padrão, valida os números e gera os txts contato.txt e mensage.txt,acionando o serviço em python para ler os txts,encaminhando as mensagens.</p>
-
-
+   <p>Observações</p>
+   - O intervalo entre uma mensagem e outra ( Mesmo com erro no número é de 15s)<br> 
+   - Na coluna dos numeros, somente colocar codigo de área + número
 
 ## 🔓 Licença 
 MIT © [Paulo Mota](https://www.linkedin.com/in/paulo-mota-955218a2/)
