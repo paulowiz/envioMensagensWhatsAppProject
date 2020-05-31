@@ -250,7 +250,7 @@ begin
            lista_grid.Cells[2,nLinha]:= msg;
         end else
         begin
-           Writeln(arq,lista_grid.Cells[0,nLinha]+';'+'+'+edt_coutry_code.Text+copy(lista_grid.Cells[1,nLinha],1,2)+copy(lista_grid.Cells[1,nLinha],4,11));
+           Writeln(arq,lista_grid.Cells[0,nLinha]+';'+'+'+edt_coutry_code.Text+lista_grid.Cells[1,nLinha]);
            lista_grid.Cells[2,nLinha]:= 'OK';
         end;
      end;
