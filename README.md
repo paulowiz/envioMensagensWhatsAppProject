@@ -9,7 +9,7 @@ Requisitos:
 Google Chrome v83 <br> (Caso queria usar as verões 80 ou 81, deve renomear o arquivo chromedriver para chromedriver83 e retirar o codigo da versão do chromedriver desejado para ficar com o nome de chromedriver)
 Microsoft Excel ou Similar<br>
 
-Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppProject/blob/feature/countryCode/Software.rar"><b>Software.rar</b></a> e executar o <b>WhatsAppSender.exe</b>, preencher a <b>planilha_padrão(Default Sheet).xls</b> com os nomes e números desejados , usar o <b>SistemaDeEnvio</b> aberto para importar o xls, digite a mensagem 
+Baixar o arquivo <a href ="https://github.com/paulowiz/envioMensagensWhatsAppProject/blob/feature/countryCode/Software.rar"><b>Software.rar</b></a> e executar o <b>WhatsAppSender.exe</b>, preencher a <b>planilha_padrão(Default Sheet).xls</b> com os nomes e números desejados , usar o <b>WhatsAppSender</b> aberto para importar o xls, digite a mensagem 
 
 ![WhatsAppSender](https://user-images.githubusercontent.com/18649504/83356376-2ad21e00-a33c-11ea-9bf8-b385c6c43861.gif)
 
