@@ -6,11 +6,19 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 import socket
+from datetime import datetime
 
-mensagem = open('mensagem.txt','r')
+data_e_hora_atuais = datetime.now()
+data_e_hora_em_texto = data_e_hora_atuais.strftime('%d%m%Y-%H%M%S')
+log = open('log-'+data_e_hora_em_texto+'.txt', 'w')
+
+message_text = ''
+mensagem = open('mensagem.txt','r', encoding="utf8")
 for msg in mensagem:
-    message_text = msg
+    message_text = message_text + msg
     
+mensagem.close()
+
 no_of_message = 1  # no. of time
 contato_txt = open('contatos.txt','r') #[553183001068]  # list of phone number
 
@@ -24,7 +32,8 @@ for reg in contato_txt:
 
 def element_presence(by, xpath, time):
     element_present = EC.presence_of_element_located((By.XPATH, xpath))
-    WebDriverWait(driver, time).until(element_present)
+    sleep(5)
+    #WebDriverWait(driver, time).until(element_present)
 
 
 def is_connected():
@@ -43,7 +52,7 @@ driver = webdriver.Chrome(chrome_driver_binary, chrome_options=options)
  
 #driver = webdriver.Chrome(executable_path="chromedriver.exe")
 driver.get("http://web.whatsapp.com")
-sleep(10)  # wait time to scan the code in second
+sleep(20)  # wait time to scan the code in second
 
 
 def send_whatsapp_msg(phone_no, text):
@@ -63,15 +72,24 @@ def send_whatsapp_msg(phone_no, text):
         for x in range(no_of_message):
             txt_box.send_keys(text)
             txt_box.send_keys("\n")
+        logtext = str(phone_no)+';'+'Message sent successfully\n'
+        logtext = logtext.replace('\n','')
+        log.writelines(logtext+'\n')
 
     except Exception as e:
-        print("invailid phone no :"+str(phone_no))
+        logtext = str(phone_no)+';'+'Error Number'
+        logtext = logtext.replace('\n','')
+        log.writelines(logtext+'\n')
+       
 
 
 for moblie_no in moblie_no_list:
     try:
         send_whatsapp_msg(moblie_no, message_text)
-
+        sleep(15)
     except Exception as e:
-        sleep(10)
-        is_connected()
+       sleep(5)
+       is_connected()
+driver.close
+log.close()
+contato_txt.close()
