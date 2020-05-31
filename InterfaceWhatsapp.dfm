@@ -1,13 +1,12 @@
 object ufrmWhatsapp: TufrmWhatsapp
   Left = 0
   Top = 0
-  Width = 854
-  Height = 719
-  AutoScroll = True
-  AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Sistema de Mensagens Autom'#225'ticas '
+  ClientHeight = 682
+  ClientWidth = 849
   Color = clBtnFace
+  DefaultMonitor = dmDesktop
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -20,7 +19,7 @@ object ufrmWhatsapp: TufrmWhatsapp
   object pnl_header: TPanel
     Left = 0
     Top = 0
-    Width = 838
+    Width = 849
     Height = 64
     Align = alTop
     BevelOuter = bvNone
@@ -34,7 +33,7 @@ object ufrmWhatsapp: TufrmWhatsapp
     ParentFont = False
     TabOrder = 0
     object lbl_data: TLabel
-      Left = 432
+      Left = 443
       Top = 0
       Width = 406
       Height = 64
@@ -50,12 +49,13 @@ object ufrmWhatsapp: TufrmWhatsapp
       ParentColor = False
       ParentFont = False
       Layout = tlCenter
+      ExplicitLeft = 432
       ExplicitHeight = 65
     end
     object lbl_title: TLabel
       Left = 0
       Top = 0
-      Width = 432
+      Width = 443
       Height = 64
       Align = alClient
       Caption = 'Envio Autm'#225'tico de WhatsApp'
@@ -74,8 +74,8 @@ object ufrmWhatsapp: TufrmWhatsapp
   end
   object pnl_bottom: TPanel
     Left = 0
-    Top = 632
-    Width = 838
+    Top = 634
+    Width = 849
     Height = 48
     Align = alBottom
     BevelOuter = bvNone
@@ -86,7 +86,7 @@ object ufrmWhatsapp: TufrmWhatsapp
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 781
+      Width = 792
       Height = 42
       Align = alClient
       Alignment = taRightJustify
@@ -97,12 +97,12 @@ object ufrmWhatsapp: TufrmWhatsapp
       Font.Style = []
       ParentFont = False
       Layout = tlCenter
-      ExplicitLeft = 780
+      ExplicitLeft = 791
       ExplicitWidth = 4
       ExplicitHeight = 17
     end
     object img_linkedin: TImage
-      Left = 787
+      Left = 798
       Top = 0
       Width = 51
       Height = 48
@@ -132,6 +132,7 @@ object ufrmWhatsapp: TufrmWhatsapp
         7A60A00100537E93406EA04CC90000000049454E44AE426082}
       OnClick = img_linkedinClick
       OnMouseMove = img_linkedinMouseMove
+      ExplicitLeft = 787
       ExplicitTop = 16
       ExplicitHeight = 32
     end
@@ -139,8 +140,8 @@ object ufrmWhatsapp: TufrmWhatsapp
   object pnl_body: TPanel
     Left = 0
     Top = 64
-    Width = 838
-    Height = 568
+    Width = 849
+    Height = 570
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
@@ -372,8 +373,8 @@ object ufrmWhatsapp: TufrmWhatsapp
     object Panel1: TPanel
       Left = 0
       Top = 0
-      Width = 838
-      Height = 568
+      Width = 849
+      Height = 570
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
@@ -381,10 +382,10 @@ object ufrmWhatsapp: TufrmWhatsapp
       TabOrder = 4
       object lbl_numeros: TLabel
         Left = 24
-        Top = 79
-        Width = 164
+        Top = 133
+        Width = 305
         Height = 21
-        Caption = 'N'#250'meros Selecionados '
+        Caption = 'N'#250'meros Selecionados ( Selected Numbers)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -431,7 +432,7 @@ object ufrmWhatsapp: TufrmWhatsapp
         Top = 16
         Width = 361
         Height = 52
-        Caption = 'Caminho do Arquivo'
+        Caption = 'Caminho do Arquivo ( File Path )'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
@@ -458,9 +459,9 @@ object ufrmWhatsapp: TufrmWhatsapp
       end
       object lista_grid: TStringGrid
         Left = 24
-        Top = 106
-        Width = 441
-        Height = 281
+        Top = 160
+        Width = 417
+        Height = 227
         Color = clBtnFace
         ColCount = 3
         Ctl3D = True
@@ -531,10 +532,10 @@ object ufrmWhatsapp: TufrmWhatsapp
       end
       object grp_msg: TGroupBox
         Left = 488
-        Top = 98
+        Top = 16
         Width = 337
-        Height = 239
-        Caption = 'Mensagem'
+        Height = 321
+        Caption = 'Mensagem ( Message )'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
@@ -550,7 +551,7 @@ object ufrmWhatsapp: TufrmWhatsapp
           Left = 12
           Top = 25
           Width = 313
-          Height = 202
+          Height = 284
           Align = alClient
           BevelInner = bvNone
           BevelOuter = bvNone
@@ -604,17 +605,46 @@ object ufrmWhatsapp: TufrmWhatsapp
           TabOrder = 0
         end
       end
+      object GroupBox2: TGroupBox
+        Left = 24
+        Top = 74
+        Width = 177
+        Height = 52
+        Caption = 'Codigo do Pa'#237's ( Country Code )'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+        object edt_coutry_code: TEdit
+          Left = 9
+          Top = 20
+          Width = 152
+          Height = 21
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+        end
+      end
     end
   end
   object OpenDialog1: TOpenDialog
     Filter = 'Excel Files|.xls;*.xlsx;*.xlsm'
-    Left = 480
-    Top = 89
+    Left = 600
+    Top = 33
   end
   object Timer1: TTimer
     Interval = 1
     OnTimer = Timer1Timer
-    Left = 568
-    Top = 97
+    Left = 696
+    Top = 17
   end
 end

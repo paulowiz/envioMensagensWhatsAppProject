@@ -8,6 +8,7 @@ uses
   Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.Grids,ComObj, Vcl.CategoryButtons,
   System.ImageList, Vcl.ImgList,ShellApi,DateUtils;
 
+
 type
   TufrmWhatsapp = class(TForm)
     pnl_header: TPanel;
@@ -34,6 +35,8 @@ type
     lbl_developer: TLabel;
     edit_path: TEdit;
     img_linkedin: TImage;
+    GroupBox2: TGroupBox;
+    edt_coutry_code: TEdit;
     procedure Image1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure btn_enviarClick(Sender: TObject);
@@ -160,17 +163,17 @@ end;
 procedure TufrmWhatsapp.btn_enviarClick(Sender: TObject);
 begin
 
-
-  if edit_path.Text = EmptyStr then
+  if memo_mensagem.Text = EmptyStr then
   begin
-    ShowMessage('Nenhuma arquivo foi importado!');
+    ShowMessage('O campo mensagem deve ser preenchido! [ Message field should be fill! ]');
+    memo_mensagem.SetFocus;
     Abort;
   end;
 
-  if memo_mensagem.Text = EmptyStr then
+  if (edt_coutry_code.Text = EmptyStr) then
   begin
-    ShowMessage('Campo de mensagem não pode ficar vazio!');
-    memo_mensagem.SetFocus;
+    ShowMessage('O Código DDI do país deve ser preenchido.[ Country Code Field should be fill! ]');
+    edt_coutry_code.SetFocus;
     Abort;
   end;
 
@@ -180,7 +183,7 @@ begin
   begin
     if Size <= 0 then
     begin
-       ShowMessage('Não há números para enviar mensagens!');
+       ShowMessage('Nenhum número válido para envio de menssagens! [ No valid numbers to send messages! ]');
        Abort;
     end;
    Free;
@@ -190,11 +193,11 @@ begin
 
   codigo := codigo+1;
   memo_logs.Lines.Add('');
-  memo_logs.Lines.Add('Codigo do Envio: '+IntToStr(codigo));
+  memo_logs.Lines.Add('Send Code: '+IntToStr(codigo));
   memo_logs.Lines.Add('Status: Números formatados e prontos para envio de mensagens.Esperando execução automática do Whatsapp Web.......');
-  memo_logs.Lines.Add('Data/Hora: '+DateTimeToStr(Now));
-  memo_logs.Lines.Add('Arquivo: '+OpenDialog1.FileName);
-  memo_logs.Lines.Add('Mensagem:');
+  memo_logs.Lines.Add('Date/Time: '+DateTimeToStr(Now));
+  memo_logs.Lines.Add('File: '+OpenDialog1.FileName);
+  memo_logs.Lines.Add('Message:');
   memo_logs.Lines.Add('['+memo_mensagem.Text+']');
   memo_logs.Lines.Add('');
 
@@ -206,10 +209,14 @@ procedure TufrmWhatsapp.FormShow(Sender: TObject);
 begin
     memo_logs.Text := EmptyStr;
     memo_mensagem.Text := EmptyStr;
-    lbl_developer.Caption := ' Desenvolvido por Paulo Mota ';
-    lbl_title.Caption :=  ' Envio Autmático de WhatsApp ';
+    lbl_developer.Caption := ' Developed by Paulo Mota ';
+    lbl_title.Caption :=  ' WhatsApp Sender ';
     lista_grid.DefaultColWidth:=100;
     lista_grid.ColWidths[2]:=200;
+    lista_grid.ColWidths[1]:=180;
+    lista_grid.Cells[0,0]:= 'Name';
+    lista_grid.Cells[1,0]:= 'Numbers (Area Code + Number)';
+    lista_grid.Cells[2,0]:= 'Status';
 end;
 
 procedure TufrmWhatsapp.geraTxt;
@@ -234,42 +241,18 @@ begin
          lista_grid.Cells[1,nLinha] := Trim(RemoveCaracter(lista_grid.Cells[1,nLinha]));
          if not EhNumero(lista_grid.Cells[1,nLinha]) then
          begin
-           msg := 'Número inválido';
-         end else
-         begin
-           if Length(lista_grid.Cells[1,nLinha]) < 11 then
-           begin
-              msg := 'Número muito curto';
-           end else
-           begin
-              if Length(lista_grid.Cells[1,nLinha]) > 11 then
-              begin
-                 msg := 'Número muito longo';
-              end;
-           end;
+           msg := 'Invalid Number';
          end;
 
 
-
-         if EhNumero(lista_grid.Cells[0,nLinha]) then
-         begin
-           if not (msg = EmptyStr) then
-           begin
-              msg := msg + ';Nome inválido';
-           end else
-           begin
-              msg := msg + 'Nome inválido';
-           end;
-         end;
-
-         if not  (msg = EmptyStr) then
-         begin
+        if not  (msg = EmptyStr) then
+        begin
            lista_grid.Cells[2,nLinha]:= msg;
-         end else
-         begin
-           Writeln(arq,lista_grid.Cells[0,nLinha]+';'+'55'+copy(lista_grid.Cells[1,nLinha],1,2)+copy(lista_grid.Cells[1,nLinha],4,11));
+        end else
+        begin
+           Writeln(arq,lista_grid.Cells[0,nLinha]+';'+'+'+edt_coutry_code.Text+copy(lista_grid.Cells[1,nLinha],1,2)+copy(lista_grid.Cells[1,nLinha],4,11));
            lista_grid.Cells[2,nLinha]:= 'OK';
-         end;
+        end;
      end;
    end;
   finally
@@ -291,7 +274,7 @@ begin
       Except
       on E: Exception do
       begin
-        ShowMessage('Erro: ' + E.Message );
+        ShowMessage('Error: ' + E.Message );
         Close;
       end;
       end;
