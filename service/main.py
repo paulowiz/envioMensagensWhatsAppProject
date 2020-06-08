@@ -13,7 +13,7 @@ data_e_hora_em_texto = data_e_hora_atuais.strftime('%d%m%Y-%H%M%S')
 log = open('log-'+data_e_hora_em_texto+'.txt', 'w')
 
 message_text = ''
-mensagem = open('mensagem.txt','r', encoding="utf8")
+mensagem = open('mensagem.txt','r')
 for msg in mensagem:
     message_text = message_text + msg
     
