@@ -32,7 +32,7 @@ for reg in contato_txt:
 
 def element_presence(by, xpath, time):
     element_present = EC.presence_of_element_located((By.XPATH, xpath))
-    sleep(5)
+    sleep(10)
     #WebDriverWait(driver, time).until(element_present)
 
 
