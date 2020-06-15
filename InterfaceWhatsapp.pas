@@ -82,9 +82,13 @@ for x:=1 to length(str) do
        (str[x] <> ')') and
        (str[x] <> '_') and
        (str[x] <> '/') and
+       (str[x] <> '#') and
+       (str[x] <> '*') and
        (str[x] <> ' ') then
     st:=st + str[x];
     end;
+
+st := stringReplace(st, #$A, '', [rfReplaceAll]);
 Result:=st;
 end;
 
