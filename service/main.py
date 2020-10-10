@@ -7,23 +7,27 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 import socket
 from datetime import datetime
+from controller.funcoesGlobais import FucoesGlobais
 
+fg = FucoesGlobais()
+fg.atualiza_chromedrive()
 data_e_hora_atuais = datetime.now()
 data_e_hora_em_texto = data_e_hora_atuais.strftime('%d%m%Y-%H%M%S')
 log = open('log-'+data_e_hora_em_texto+'.txt', 'w')
 
 message_text = ''
-mensagem = open('mensagem.txt','r')
+mensagem = open('mensagem.txt', 'r')
 for msg in mensagem:
     message_text = message_text + msg
-    
+
 mensagem.close()
 
 no_of_message = 1  # no. of time
-contato_txt = open('contatos.txt','r') #[553183001068]  # list of phone number
+# [553183001068]  # list of phone number
+contato_txt = open('contatos.txt', 'r')
 
 name = []
-moblie_no_list=[]
+moblie_no_list = []
 for reg in contato_txt:
     array = reg.split(';')
     name.append(array[0])
@@ -45,11 +49,12 @@ def is_connected():
     except:
         is_connected()
 
+
 options = webdriver.ChromeOptions()
 options.binary_location = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-chrome_driver_binary = "chromedriver.exe"#/usr/local/bin/chromedriver"
+chrome_driver_binary = "chromedriver.exe"  # /usr/local/bin/chromedriver"
 driver = webdriver.Chrome(chrome_driver_binary, chrome_options=options)
- 
+
 #driver = webdriver.Chrome(executable_path="chromedriver.exe")
 driver.get("http://web.whatsapp.com")
 sleep(20)  # wait time to scan the code in second
@@ -73,14 +78,13 @@ def send_whatsapp_msg(phone_no, text):
             txt_box.send_keys(text)
             txt_box.send_keys("\n")
         logtext = str(phone_no)+';'+'Message sent successfully\n'
-        logtext = logtext.replace('\n','')
+        logtext = logtext.replace('\n', '')
         log.writelines(logtext+'\n')
 
     except Exception as e:
         logtext = str(phone_no)+';'+'Error Number'
-        logtext = logtext.replace('\n','')
+        logtext = logtext.replace('\n', '')
         log.writelines(logtext+'\n')
-       
 
 
 for moblie_no in moblie_no_list:
@@ -88,8 +92,8 @@ for moblie_no in moblie_no_list:
         send_whatsapp_msg(moblie_no, message_text)
         sleep(15)
     except Exception as e:
-       sleep(5)
-       is_connected()
+        sleep(5)
+        is_connected()
 driver.close
 log.close()
 contato_txt.close()
